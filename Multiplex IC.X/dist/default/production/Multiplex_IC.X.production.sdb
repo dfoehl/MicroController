@@ -1,0 +1,183 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PIC14E ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F1503 ]
+[d frameptr 6 ]
+"67 M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+[e E2530 . `uc
+HP0 0
+HP1 17
+HP1Vr0 51
+HP1Vr1 85
+HP1Vr2 119
+HP2 136
+HP2Vr0 153
+HP2Vr1 187
+HP2Vr2 221
+Sh1 255
+]
+"5 M:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"10 M:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"4 M:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"70 M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+[v _initialize initialize `(v  1 e 1 0 ]
+"95
+[v _SetLed SetLed `(v  1 e 1 0 ]
+"104
+[v _main main `(v  1 e 1 0 ]
+"279
+[v _I2C_Slave_Read I2C_Slave_Read `II(v  1 e 1 0 ]
+"429 M:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f1503.h
+[v _PORTA PORTA `VEuc  1 e 1 @12 ]
+"961
+[v _TRISA TRISA `VEuc  1 e 1 @140 ]
+"1011
+[v _TRISC TRISC `VEuc  1 e 1 @142 ]
+[s S39 . 1 `uc 1 PS 1 0 :3:0 
+`uc 1 PSA 1 0 :1:3 
+`uc 1 TMR0SE 1 0 :1:4 
+`uc 1 TMR0CS 1 0 :1:5 
+`uc 1 INTEDG 1 0 :1:6 
+`uc 1 nWPUEN 1 0 :1:7 
+]
+"1196
+[s S46 . 1 `uc 1 PS0 1 0 :1:0 
+`uc 1 PS1 1 0 :1:1 
+`uc 1 PS2 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 T0SE 1 0 :1:4 
+`uc 1 T0CS 1 0 :1:5 
+]
+[u S53 . 1 `S39 1 . 1 0 `S46 1 . 1 0 ]
+[v _OPTION_REGbits OPTION_REGbits `VES53  1 e 1 @149 ]
+"1372
+[v _OSCCON OSCCON `VEuc  1 e 1 @153 ]
+[s S81 . 1 `uc 1 LATA0 1 0 :1:0 
+`uc 1 LATA1 1 0 :1:1 
+`uc 1 LATA2 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 LATA4 1 0 :1:4 
+`uc 1 LATA5 1 0 :1:5 
+]
+"1708
+[u S88 . 1 `S81 1 . 1 0 ]
+[v _LATAbits LATAbits `VES88  1 e 1 @268 ]
+"1738
+[v _LATC LATC `VEuc  1 e 1 @270 ]
+"2319
+[v _ANSELA ANSELA `VEuc  1 e 1 @396 ]
+"2366
+[v _ANSELC ANSELC `VEuc  1 e 1 @398 ]
+"2603
+[v _WPUA WPUA `VEuc  1 e 1 @524 ]
+"2666
+[v _SSPBUF SSPBUF `VEuc  1 e 1 @529 ]
+"2699
+[v _SSP1ADD SSP1ADD `VEuc  1 e 1 @530 ]
+"2775
+[v _SSP1STAT SSP1STAT `VEuc  1 e 1 @532 ]
+[s S131 . 1 `uc 1 BF 1 0 :1:0 
+`uc 1 UA 1 0 :1:1 
+`uc 1 R_nW 1 0 :1:2 
+`uc 1 S 1 0 :1:3 
+`uc 1 P 1 0 :1:4 
+`uc 1 D_nA 1 0 :1:5 
+`uc 1 CKE 1 0 :1:6 
+`uc 1 SMP 1 0 :1:7 
+]
+"2797
+[u S140 . 1 `S131 1 . 1 0 ]
+[v _SSP1STATbits SSP1STATbits `VES140  1 e 1 @532 ]
+"2897
+[v _SSP1CON1 SSP1CON1 `VEuc  1 e 1 @533 ]
+[s S104 . 1 `uc 1 SSPM0 1 0 :1:0 
+`uc 1 SSPM1 1 0 :1:1 
+`uc 1 SSPM2 1 0 :1:2 
+`uc 1 SSPM3 1 0 :1:3 
+`uc 1 CKP 1 0 :1:4 
+`uc 1 SSPEN 1 0 :1:5 
+`uc 1 SSPOV 1 0 :1:6 
+`uc 1 WCOL 1 0 :1:7 
+]
+"2926
+[s S113 . 1 `uc 1 SSPM 1 0 :4:0 
+]
+[u S115 . 1 `S104 1 . 1 0 `S113 1 . 1 0 ]
+[v _SSP1CON1bits SSP1CON1bits `VES115  1 e 1 @533 ]
+"3051
+[v _SSPCON1bits SSPCON1bits `VES115  1 e 1 @533 ]
+"3101
+[v _SSP1CON2 SSP1CON2 `VEuc  1 e 1 @534 ]
+"7392
+[v _GIE GIE `VEb  1 e 0 @95 ]
+"8031
+[v _PEIE PEIE `VEb  1 e 0 @94 ]
+"8292
+[v _SSP1IE SSP1IE `VEb  1 e 0 @1163 ]
+"8295
+[v _SSP1IF SSP1IF `VEb  1 e 0 @139 ]
+"67 M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+[v _targetState targetState `VEuc  1 e 1 0 ]
+"68
+[v _currentState currentState `uc  1 e 1 0 ]
+"104
+[v _main main `(v  1 e 1 0 ]
+{
+"264
+[v main@j_215 j `s  1 a 2 8 ]
+"233
+[v main@j j `s  1 a 2 4 ]
+"263
+[v main@x_214 x `i  1 a 2 16 ]
+"232
+[v main@x x `i  1 a 2 12 ]
+"254
+[v main@i_212 i `i  1 a 2 14 ]
+"262
+[v main@i_213 i `i  1 a 2 6 ]
+"231
+[v main@i_202 i `i  1 a 2 2 ]
+"112
+[v main@i i `i  1 a 2 10 ]
+"108
+[v main@pinActive pinActive `[4]uc  1 a 4 26 ]
+[v main@lowPin lowPin `[4]uc  1 a 4 22 ]
+[v main@highPin highPin `[4]uc  1 a 4 18 ]
+"277
+} 0
+"70
+[v _initialize initialize `(v  1 e 1 0 ]
+{
+"93
+} 0
+"5 M:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+{
+"10
+[v ___awdiv@quotient quotient `i  1 a 2 9 ]
+"11
+[v ___awdiv@sign sign `uc  1 a 1 8 ]
+[v ___awdiv@counter counter `uc  1 a 1 7 ]
+"5
+[v ___awdiv@divisor divisor `i  1 p 2 2 ]
+[v ___awdiv@dividend dividend `i  1 p 2 4 ]
+"41
+} 0
+"95 M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+[v _SetLed SetLed `(v  1 e 1 0 ]
+{
+[v SetLed@highPin highPin `uc  1 a 1 wreg ]
+[v SetLed@highPin highPin `uc  1 a 1 wreg ]
+[v SetLed@lowPin lowPin `uc  1 p 1 2 ]
+[v SetLed@active active `a  1 p 1 3 ]
+[v SetLed@highPin highPin `uc  1 a 1 8 ]
+"102
+} 0
+"279
+[v _I2C_Slave_Read I2C_Slave_Read `II(v  1 e 1 0 ]
+{
+"303
+} 0
