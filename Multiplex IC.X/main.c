@@ -53,6 +53,7 @@
 
 enum {
     HP0    = 0x00,
+    HP0X   = 0x0F,
     HP1    = 0x11,
     HP1Vr0 = 0x33,
     HP1Vr1 = 0x55,
@@ -61,6 +62,7 @@ enum {
     HP2Vr0 = 0x99,
     HP2Vr1 = 0xBB,
     HP2Vr2 = 0xDD,
+    HP0Sh1 = 0xEE,
     Sh1    = 0xFF
 };
 
@@ -118,6 +120,7 @@ void main(void) {
         switch(targetState) {
             default:
             case HP0 :
+            case HP0X:
                 highPin[0] = 0;
                 lowPin[0] = 1;
                 pinActive[0] = 1; 
@@ -213,7 +216,7 @@ void main(void) {
                 lowPin[3] = 2;
                 pinActive[3] = 1;
                 break;
-            case Sh1 :
+            case HP0Sh1 :
                 highPin[0] = 1;
                 lowPin[0] = 3;
                 pinActive[0] = 1; 
@@ -223,6 +226,14 @@ void main(void) {
                 highPin[2] = 0;
                 lowPin[2] = 3;
                 pinActive[2] = 1; 
+                break;
+            case Sh1 :
+                highPin[0] = 1;
+                lowPin[0] = 3;
+                pinActive[0] = 1; 
+                highPin[1] = 3;
+                lowPin[1] = 1;
+                pinActive[1] = 1;   
                 break;
         }
         
