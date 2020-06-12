@@ -239,6 +239,7 @@ void main(void) {
         
         currentState = targetState;
         
+        GIE = 0;
         
         for(int i = 0; i < 50; i++) {            
             for(int x = 0; x < 4; x++) {
@@ -252,6 +253,8 @@ void main(void) {
                 }
             }
         }
+        
+        GIE = 1;
         
         switch(targetState) {
             case HP0 :
@@ -271,6 +274,8 @@ void main(void) {
         
         LATAbits.LATA5 = 0;
         
+        GIE = 0;
+        
         for(int i = 0; i < 50; i++) {            
             for(int x = 0; x < 4; x++) {
                 for(short j = 0; j < 10; j++) {  
@@ -284,11 +289,13 @@ void main(void) {
             }
         }
         
+        GIE = 1;
+        
         __delay_ms(300);
     }
 }
 
-void __interrupt() I2C_Slave_Read() {
+void __interrupt() I2C_Slave() {
     unsigned char buf;
     
     if(SSP1IF == 1) {

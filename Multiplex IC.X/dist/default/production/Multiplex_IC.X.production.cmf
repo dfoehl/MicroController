@@ -11,16 +11,16 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\dfoeh\AppData\Local\Temp\sc90.o
+$C:\Users\dfoeh\AppData\Local\Temp\se0o.o
 reset_vec CODE 0 0 0 1 2
 end_init CODE 0 2D 2D 1 2
 config CONFIG 0 8007 8007 2 2
 $dist/default/production\Multiplex_IC.X.production.o
 cinit CODE 0 2E 2E 6 2
-text1 CODE 0 385 385 23 2
-text2 CODE 0 2D1 2D1 5F 2
-text3 CODE 0 330 330 55 2
-maintext CODE 0 34 34 29D 2
+text1 CODE 0 39A 39A 23 2
+text2 CODE 0 2E6 2E6 5F 2
+text3 CODE 0 345 345 55 2
+maintext CODE 0 34 34 2B2 2
 cstackCOMMON COMMON 1 70 70 B 1
 cstackBANK0 BANK0 1 20 20 1E 1
 intentry CODE 0 4 4 29 2
@@ -36,9 +36,9 @@ RAM A0-BF 1
 BANK0 40-6F 1
 BANK1 A0-BF 1
 CONST 1-3 2
-CONST 3A8-7FF 2
+CONST 3BD-7FF 2
 ENTRY 1-3 2
-ENTRY 3A8-7FF 2
+ENTRY 3BD-7FF 2
 IDLOC 8000-8003 2
 SFR10 500-56F 1
 SFR11 580-5EF 1
@@ -64,7 +64,7 @@ SFR30 F00-F6F 1
 SFR31 F80-FEF 1
 STACK 2020-206F 1
 CODE 1-3 2
-CODE 3A8-7FF 2
+CODE 3BD-7FF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
 SFR2 100-16F 1
@@ -78,9 +78,9 @@ SFR9 480-4EF 1
 BIGRAM 2000-206F 1
 COMMON 7B-7D 1
 STRCODE 1-3 2
-STRCODE 3A8-7FF 2
+STRCODE 3BD-7FF 2
 STRING 1-3 2
-STRING 3A8-7FF 2
+STRING 3BD-7FF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -95,205 +95,211 @@ STRING 3A8-7FF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Multiplex_IC.X.production.o
-2E cinit CODE >464:C:\Users\dfoeh\AppData\Local\Temp\sc90.s
-2E cinit CODE >467:C:\Users\dfoeh\AppData\Local\Temp\sc90.s
-2E cinit CODE >482:C:\Users\dfoeh\AppData\Local\Temp\sc90.s
-2F cinit CODE >483:C:\Users\dfoeh\AppData\Local\Temp\sc90.s
-30 cinit CODE >484:C:\Users\dfoeh\AppData\Local\Temp\sc90.s
-31 cinit CODE >490:C:\Users\dfoeh\AppData\Local\Temp\sc90.s
-31 cinit CODE >492:C:\Users\dfoeh\AppData\Local\Temp\sc90.s
-32 cinit CODE >493:C:\Users\dfoeh\AppData\Local\Temp\sc90.s
-33 cinit CODE >494:C:\Users\dfoeh\AppData\Local\Temp\sc90.s
-4 intentry CODE >279:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-6 intentry CODE >282:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-B intentry CODE >283:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-C intentry CODE >285:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-15 intentry CODE >286:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-16 intentry CODE >287:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-17 intentry CODE >288:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-18 intentry CODE >291:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-1C intentry CODE >292:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-1D intentry CODE >293:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-22 intentry CODE >294:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-27 intentry CODE >295:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-28 intentry CODE >296:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-29 intentry CODE >299:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-2B intentry CODE >303:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-330 text3 CODE >95:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-331 text3 CODE >96:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-334 text3 CODE >97:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-34F text3 CODE >98:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-355 text3 CODE >99:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-36D text3 CODE >101:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-384 text3 CODE >102:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-2D1 text2 CODE >5:M:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\awdiv.c
-2D1 text2 CODE >13:M:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\awdiv.c
-2D2 text2 CODE >14:M:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\awdiv.c
-2D6 text2 CODE >15:M:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\awdiv.c
-2DB text2 CODE >16:M:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\awdiv.c
-2DD text2 CODE >18:M:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\awdiv.c
-2E1 text2 CODE >19:M:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\awdiv.c
-2E6 text2 CODE >20:M:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\awdiv.c
-2EA text2 CODE >22:M:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\awdiv.c
-2EC text2 CODE >23:M:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\awdiv.c
-2F2 text2 CODE >24:M:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\awdiv.c
-2F4 text2 CODE >25:M:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\awdiv.c
-2F5 text2 CODE >26:M:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\awdiv.c
-2FA text2 CODE >27:M:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\awdiv.c
-2FE text2 CODE >25:M:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\awdiv.c
-302 text2 CODE >30:M:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\awdiv.c
-307 text2 CODE >31:M:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\awdiv.c
-311 text2 CODE >32:M:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\awdiv.c
-315 text2 CODE >33:M:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\awdiv.c
-316 text2 CODE >35:M:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\awdiv.c
-31B text2 CODE >36:M:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\awdiv.c
-321 text2 CODE >38:M:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\awdiv.c
-326 text2 CODE >39:M:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\awdiv.c
-32B text2 CODE >40:M:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\awdiv.c
-32F text2 CODE >41:M:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\awdiv.c
-385 text1 CODE >70:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-385 text1 CODE >71:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-388 text1 CODE >73:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-38A text1 CODE >74:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-38C text1 CODE >76:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-38E text1 CODE >77:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-38F text1 CODE >79:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-392 text1 CODE >80:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-394 text1 CODE >82:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-397 text1 CODE >83:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-399 text1 CODE >84:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-39B text1 CODE >85:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-3A1 text1 CODE >87:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-3A2 text1 CODE >88:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-3A3 text1 CODE >89:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-3A5 text1 CODE >90:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-3A7 text1 CODE >93:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-34 maintext CODE >104:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+2E cinit CODE >464:C:\Users\dfoeh\AppData\Local\Temp\se0o.s
+2E cinit CODE >467:C:\Users\dfoeh\AppData\Local\Temp\se0o.s
+2E cinit CODE >482:C:\Users\dfoeh\AppData\Local\Temp\se0o.s
+2F cinit CODE >483:C:\Users\dfoeh\AppData\Local\Temp\se0o.s
+30 cinit CODE >484:C:\Users\dfoeh\AppData\Local\Temp\se0o.s
+31 cinit CODE >490:C:\Users\dfoeh\AppData\Local\Temp\se0o.s
+31 cinit CODE >492:C:\Users\dfoeh\AppData\Local\Temp\se0o.s
+32 cinit CODE >493:C:\Users\dfoeh\AppData\Local\Temp\se0o.s
+33 cinit CODE >494:C:\Users\dfoeh\AppData\Local\Temp\se0o.s
+4 intentry CODE >291:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+6 intentry CODE >294:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+B intentry CODE >295:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+C intentry CODE >297:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+15 intentry CODE >298:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+16 intentry CODE >299:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+17 intentry CODE >300:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+18 intentry CODE >303:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+1C intentry CODE >304:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+1D intentry CODE >305:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+22 intentry CODE >306:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+27 intentry CODE >307:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+28 intentry CODE >308:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+29 intentry CODE >311:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+2B intentry CODE >315:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+345 text3 CODE >97:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+346 text3 CODE >98:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+349 text3 CODE >99:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+364 text3 CODE >100:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+36A text3 CODE >101:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+382 text3 CODE >103:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+399 text3 CODE >104:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+2E6 text2 CODE >5:M:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\awdiv.c
+2E6 text2 CODE >13:M:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\awdiv.c
+2E7 text2 CODE >14:M:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\awdiv.c
+2EB text2 CODE >15:M:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\awdiv.c
+2F0 text2 CODE >16:M:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\awdiv.c
+2F2 text2 CODE >18:M:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\awdiv.c
+2F6 text2 CODE >19:M:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\awdiv.c
+2FB text2 CODE >20:M:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\awdiv.c
+2FF text2 CODE >22:M:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\awdiv.c
+301 text2 CODE >23:M:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\awdiv.c
+307 text2 CODE >24:M:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\awdiv.c
+309 text2 CODE >25:M:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\awdiv.c
+30A text2 CODE >26:M:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\awdiv.c
+30F text2 CODE >27:M:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\awdiv.c
+313 text2 CODE >25:M:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\awdiv.c
+317 text2 CODE >30:M:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\awdiv.c
+31C text2 CODE >31:M:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\awdiv.c
+326 text2 CODE >32:M:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\awdiv.c
+32A text2 CODE >33:M:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\awdiv.c
+32B text2 CODE >35:M:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\awdiv.c
+330 text2 CODE >36:M:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\awdiv.c
+336 text2 CODE >38:M:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\awdiv.c
+33B text2 CODE >39:M:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\awdiv.c
+340 text2 CODE >40:M:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\awdiv.c
+344 text2 CODE >41:M:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\awdiv.c
+39A text1 CODE >72:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+39A text1 CODE >73:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+39D text1 CODE >75:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+39F text1 CODE >76:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+3A1 text1 CODE >78:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+3A3 text1 CODE >79:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+3A4 text1 CODE >81:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+3A7 text1 CODE >82:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+3A9 text1 CODE >84:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+3AC text1 CODE >85:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+3AE text1 CODE >86:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+3B0 text1 CODE >87:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+3B6 text1 CODE >89:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+3B7 text1 CODE >90:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+3B8 text1 CODE >91:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+3BA text1 CODE >92:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+3BC text1 CODE >95:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
 34 maintext CODE >106:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-37 maintext CODE >112:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-3A maintext CODE >113:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-41 maintext CODE >114:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-46 maintext CODE >115:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-4B maintext CODE >116:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-5D maintext CODE >120:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-5E maintext CODE >121:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-60 maintext CODE >122:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-62 maintext CODE >123:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-63 maintext CODE >124:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-67 maintext CODE >125:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-69 maintext CODE >126:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-6A maintext CODE >128:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-6E maintext CODE >129:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-6F maintext CODE >130:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-71 maintext CODE >131:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-72 maintext CODE >133:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-76 maintext CODE >134:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-77 maintext CODE >135:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-79 maintext CODE >136:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-7A maintext CODE >137:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-7E maintext CODE >138:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-80 maintext CODE >139:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-82 maintext CODE >140:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-86 maintext CODE >141:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-88 maintext CODE >142:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-89 maintext CODE >144:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-8D maintext CODE >145:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-8E maintext CODE >146:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-90 maintext CODE >147:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-94 maintext CODE >148:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-96 maintext CODE >149:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-98 maintext CODE >150:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-9C maintext CODE >151:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-9E maintext CODE >155:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-A2 maintext CODE >156:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-A3 maintext CODE >157:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-A5 maintext CODE >158:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-A9 maintext CODE >159:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-AA maintext CODE >160:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-AC maintext CODE >161:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-AE maintext CODE >162:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-B3 maintext CODE >166:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-B7 maintext CODE >167:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-B8 maintext CODE >168:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-BA maintext CODE >169:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-BC maintext CODE >170:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-BE maintext CODE >174:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-C2 maintext CODE >175:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-C3 maintext CODE >176:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-C5 maintext CODE >177:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-C7 maintext CODE >178:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-C8 maintext CODE >179:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-CA maintext CODE >180:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-CB maintext CODE >181:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-CF maintext CODE >182:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-D1 maintext CODE >183:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-D3 maintext CODE >184:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-D7 maintext CODE >185:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-D9 maintext CODE >186:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-DA maintext CODE >188:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-DE maintext CODE >189:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-DF maintext CODE >190:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-E1 maintext CODE >191:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-E3 maintext CODE >192:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-E4 maintext CODE >193:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-E6 maintext CODE >194:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-EA maintext CODE >195:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-EB maintext CODE >196:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-ED maintext CODE >197:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-F1 maintext CODE >198:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-F4 maintext CODE >202:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-F8 maintext CODE >203:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-F9 maintext CODE >204:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-FB maintext CODE >205:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-FD maintext CODE >206:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-FE maintext CODE >207:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-100 maintext CODE >208:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-104 maintext CODE >209:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-106 maintext CODE >215:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-106 maintext CODE >216:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-108 maintext CODE >217:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-10C maintext CODE >218:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-10E maintext CODE >219:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-112 maintext CODE >220:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-114 maintext CODE >221:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-116 maintext CODE >222:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-117 maintext CODE >223:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-11C maintext CODE >226:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-145 maintext CODE >228:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-149 maintext CODE >231:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-14B maintext CODE >232:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-14E maintext CODE >233:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-151 maintext CODE >234:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-16C maintext CODE >235:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-18B maintext CODE >236:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-18C maintext CODE >238:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-193 maintext CODE >240:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-1A5 maintext CODE >241:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-1B7 maintext CODE >242:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-1CA maintext CODE >245:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-1CA maintext CODE >246:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-1CC maintext CODE >247:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-1CD maintext CODE >248:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-1CD maintext CODE >249:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-1CF maintext CODE >250:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-1D0 maintext CODE >251:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-1DE maintext CODE >254:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-1E0 maintext CODE >255:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-1FF maintext CODE >256:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-208 maintext CODE >257:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-21A maintext CODE >253:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-221 maintext CODE >260:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-223 maintext CODE >262:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-234 maintext CODE >263:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-245 maintext CODE >264:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-256 maintext CODE >265:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-271 maintext CODE >266:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-278 maintext CODE >267:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-279 maintext CODE >269:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-298 maintext CODE >271:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-29E maintext CODE >272:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-2B0 maintext CODE >273:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
-2C2 maintext CODE >275:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+34 maintext CODE >108:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+37 maintext CODE >114:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+3A maintext CODE >115:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+41 maintext CODE >116:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+46 maintext CODE >117:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+4B maintext CODE >118:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+5D maintext CODE >124:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+5E maintext CODE >125:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+60 maintext CODE >126:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+62 maintext CODE >127:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+63 maintext CODE >128:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+67 maintext CODE >129:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+69 maintext CODE >130:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+6A maintext CODE >132:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+6E maintext CODE >133:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+6F maintext CODE >134:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+71 maintext CODE >135:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+72 maintext CODE >137:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+76 maintext CODE >138:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+77 maintext CODE >139:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+79 maintext CODE >140:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+7A maintext CODE >141:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+7E maintext CODE >142:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+80 maintext CODE >143:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+82 maintext CODE >144:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+86 maintext CODE >145:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+88 maintext CODE >146:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+89 maintext CODE >148:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+8D maintext CODE >149:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+8E maintext CODE >150:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+90 maintext CODE >151:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+94 maintext CODE >152:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+96 maintext CODE >153:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+98 maintext CODE >154:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+9C maintext CODE >155:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+9E maintext CODE >159:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+A2 maintext CODE >160:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+A3 maintext CODE >161:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+A5 maintext CODE >162:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+A9 maintext CODE >163:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+AA maintext CODE >164:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+AC maintext CODE >165:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+AE maintext CODE >166:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+B3 maintext CODE >170:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+B7 maintext CODE >171:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+B8 maintext CODE >172:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+BA maintext CODE >173:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+BC maintext CODE >174:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+BE maintext CODE >178:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+C2 maintext CODE >179:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+C3 maintext CODE >180:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+C5 maintext CODE >181:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+C7 maintext CODE >182:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+C8 maintext CODE >183:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+CA maintext CODE >184:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+CB maintext CODE >185:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+CF maintext CODE >186:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+D1 maintext CODE >187:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+D3 maintext CODE >188:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+D7 maintext CODE >189:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+D9 maintext CODE >190:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+DA maintext CODE >192:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+DE maintext CODE >193:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+DF maintext CODE >194:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+E1 maintext CODE >195:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+E3 maintext CODE >196:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+E4 maintext CODE >197:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+E6 maintext CODE >198:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+EA maintext CODE >199:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+EB maintext CODE >200:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+ED maintext CODE >201:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+F1 maintext CODE >202:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+F4 maintext CODE >206:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+F8 maintext CODE >207:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+F9 maintext CODE >208:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+FB maintext CODE >209:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+FD maintext CODE >210:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+FE maintext CODE >211:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+100 maintext CODE >212:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+104 maintext CODE >213:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+106 maintext CODE >219:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+106 maintext CODE >220:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+108 maintext CODE >221:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+10C maintext CODE >222:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+10E maintext CODE >223:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+112 maintext CODE >224:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+114 maintext CODE >225:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+116 maintext CODE >226:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+117 maintext CODE >227:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+11C maintext CODE >230:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+11C maintext CODE >231:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+11E maintext CODE >232:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+122 maintext CODE >233:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+124 maintext CODE >234:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+128 maintext CODE >235:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+12B maintext CODE >238:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+15A maintext CODE >240:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+15E maintext CODE >243:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+160 maintext CODE >244:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+163 maintext CODE >245:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+166 maintext CODE >246:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+181 maintext CODE >247:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+1A0 maintext CODE >248:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+1A1 maintext CODE >250:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+1A8 maintext CODE >252:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+1BA maintext CODE >253:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+1CC maintext CODE >254:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+1DF maintext CODE >257:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+1DF maintext CODE >258:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+1E1 maintext CODE >259:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+1E2 maintext CODE >260:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+1E2 maintext CODE >261:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+1E4 maintext CODE >262:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+1E5 maintext CODE >263:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+1F3 maintext CODE >266:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+1F5 maintext CODE >267:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+214 maintext CODE >268:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+21D maintext CODE >269:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+22F maintext CODE >265:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+236 maintext CODE >272:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+238 maintext CODE >274:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+249 maintext CODE >275:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+25A maintext CODE >276:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+26B maintext CODE >277:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+286 maintext CODE >278:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+28D maintext CODE >279:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+28E maintext CODE >281:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+2AD maintext CODE >283:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+2B3 maintext CODE >284:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+2C5 maintext CODE >285:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
+2D7 maintext CODE >287:M:\Programmierung\Multiplex IC\Multiplex IC.X\main.c
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -312,7 +318,7 @@ __Hspace_0 8009 0 ABS 0 - -
 __Hspace_1 7B 0 ABS 0 - -
 __Hspace_2 0 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
-__end_of_initialize 750 0 CODE 0 text1 dist/default/production\Multiplex_IC.X.production.o
+__end_of_initialize 77A 0 CODE 0 text1 dist/default/production\Multiplex_IC.X.production.o
 _SSP1STATbits 214 0 ABS 0 - dist/default/production\Multiplex_IC.X.production.o
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __CFG_MCLRE$ON 0 0 ABS 0 - dist/default/production\Multiplex_IC.X.production.o
@@ -323,21 +329,21 @@ __Hstrings 0 0 ABS 0 strings -
 _LATC 10E 0 ABS 0 - dist/default/production\Multiplex_IC.X.production.o
 _PEIE 5E 0 ABS 0 - dist/default/production\Multiplex_IC.X.production.o
 _WPUA 20C 0 ABS 0 - dist/default/production\Multiplex_IC.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\dfoeh\AppData\Local\Temp\sc90.o
+___sp 0 0 STACK 2 stack C:\Users\dfoeh\AppData\Local\Temp\se0o.o
 _main 68 0 CODE 0 maintext dist/default/production\Multiplex_IC.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\Multiplex_IC.X.production.o
-start 5A 0 CODE 0 init C:\Users\dfoeh\AppData\Local\Temp\sc90.o
+start 5A 0 CODE 0 init C:\Users\dfoeh\AppData\Local\Temp\se0o.o
 __size_of___awdiv 0 0 ABS 0 - dist/default/production\Multiplex_IC.X.production.o
 __size_of_main 0 0 ABS 0 - dist/default/production\Multiplex_IC.X.production.o
 _OPTION_REGbits 95 0 ABS 0 - dist/default/production\Multiplex_IC.X.production.o
 __Hpowerup 0 0 CODE 0 powerup -
-__end_of_SetLed 70A 0 CODE 0 text3 dist/default/production\Multiplex_IC.X.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\dfoeh\AppData\Local\Temp\sc90.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\dfoeh\AppData\Local\Temp\sc90.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\dfoeh\AppData\Local\Temp\sc90.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\dfoeh\AppData\Local\Temp\sc90.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\dfoeh\AppData\Local\Temp\sc90.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\dfoeh\AppData\Local\Temp\sc90.o
+__end_of_SetLed 734 0 CODE 0 text3 dist/default/production\Multiplex_IC.X.production.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\dfoeh\AppData\Local\Temp\se0o.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\dfoeh\AppData\Local\Temp\se0o.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\dfoeh\AppData\Local\Temp\se0o.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\dfoeh\AppData\Local\Temp\se0o.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\dfoeh\AppData\Local\Temp\se0o.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\dfoeh\AppData\Local\Temp\se0o.o
 wtemp0 7E 0 ABS 0 - dist/default/production\Multiplex_IC.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
 ___awdiv@sign 78 0 COMMON 1 cstackCOMMON dist/default/production\Multiplex_IC.X.production.o
@@ -347,9 +353,9 @@ _ANSELC 18E 0 ABS 0 - dist/default/production\Multiplex_IC.X.production.o
 ___awdiv@dividend 74 0 COMMON 1 cstackCOMMON dist/default/production\Multiplex_IC.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
 ___awdiv@divisor 72 0 COMMON 1 cstackCOMMON dist/default/production\Multiplex_IC.X.production.o
-__end_of___awdiv 660 0 CODE 0 text2 dist/default/production\Multiplex_IC.X.production.o
-___stackhi 206F 0 ABS 0 - C:\Users\dfoeh\AppData\Local\Temp\sc90.o
-___stacklo 2020 0 ABS 0 - C:\Users\dfoeh\AppData\Local\Temp\sc90.o
+__end_of___awdiv 68A 0 CODE 0 text2 dist/default/production\Multiplex_IC.X.production.o
+___stackhi 206F 0 ABS 0 - C:\Users\dfoeh\AppData\Local\Temp\se0o.o
+___stacklo 2020 0 ABS 0 - C:\Users\dfoeh\AppData\Local\Temp\se0o.o
 _I2C_Slave_Read 8 0 CODE 0 intentry dist/default/production\Multiplex_IC.X.production.o
 main@pinActive 3A 0 BANK0 1 cstackBANK0 dist/default/production\Multiplex_IC.X.production.o
 start_initialization 5C 0 CODE 0 cinit dist/default/production\Multiplex_IC.X.production.o
@@ -359,8 +365,8 @@ __pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/default/production\Multiplex_IC.X.p
 _SSP1IE 48B 0 ABS 0 - dist/default/production\Multiplex_IC.X.production.o
 _SSP1IF 8B 0 ABS 0 - dist/default/production\Multiplex_IC.X.production.o
 _SSPBUF 211 0 ABS 0 - dist/default/production\Multiplex_IC.X.production.o
-_SetLed 660 0 CODE 0 text3 dist/default/production\Multiplex_IC.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\dfoeh\AppData\Local\Temp\sc90.o
+_SetLed 68A 0 CODE 0 text3 dist/default/production\Multiplex_IC.X.production.o
+___int_sp 0 0 STACK 2 stack C:\Users\dfoeh\AppData\Local\Temp\se0o.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 BANK2 1 bank2 -
@@ -499,13 +505,13 @@ __S0 8009 0 ABS 0 - -
 __S1 7B 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
 SetLed@active 73 0 COMMON 1 cstackCOMMON dist/default/production\Multiplex_IC.X.production.o
-_SetLed$191 76 0 COMMON 1 cstackCOMMON dist/default/production\Multiplex_IC.X.production.o
+_SetLed$193 76 0 COMMON 1 cstackCOMMON dist/default/production\Multiplex_IC.X.production.o
 __CFG_BOREN$ON 0 0 ABS 0 - dist/default/production\Multiplex_IC.X.production.o
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\dfoeh\AppData\Local\Temp\sc90.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\dfoeh\AppData\Local\Temp\se0o.o
 __LbssBANK0 0 0 ABS 0 bssBANK0 -
 SetLed@lowPin 72 0 COMMON 1 cstackCOMMON dist/default/production\Multiplex_IC.X.production.o
-___awdiv 5A2 0 CODE 0 text2 dist/default/production\Multiplex_IC.X.production.o
+___awdiv 5CC 0 CODE 0 text2 dist/default/production\Multiplex_IC.X.production.o
 __Lbank10 0 0 BANK10 1 bank10 -
 __Lbank11 0 0 BANK11 1 bank11 -
 __Lbank12 0 0 BANK12 1 bank12 -
@@ -536,11 +542,11 @@ __Lconfig 1000E 0 CONFIG 0 config -
 __CFG_CP$OFF 0 0 ABS 0 - dist/default/production\Multiplex_IC.X.production.o
 __CFG_WDTE$OFF 0 0 ABS 0 - dist/default/production\Multiplex_IC.X.production.o
 _LATAbits 10C 0 ABS 0 - dist/default/production\Multiplex_IC.X.production.o
-main@i_202 22 0 BANK0 1 cstackBANK0 dist/default/production\Multiplex_IC.X.production.o
-main@i_212 2E 0 BANK0 1 cstackBANK0 dist/default/production\Multiplex_IC.X.production.o
-main@i_213 26 0 BANK0 1 cstackBANK0 dist/default/production\Multiplex_IC.X.production.o
-main@j_215 28 0 BANK0 1 cstackBANK0 dist/default/production\Multiplex_IC.X.production.o
-main@x_214 30 0 BANK0 1 cstackBANK0 dist/default/production\Multiplex_IC.X.production.o
+main@i_204 22 0 BANK0 1 cstackBANK0 dist/default/production\Multiplex_IC.X.production.o
+main@i_214 2E 0 BANK0 1 cstackBANK0 dist/default/production\Multiplex_IC.X.production.o
+main@i_215 26 0 BANK0 1 cstackBANK0 dist/default/production\Multiplex_IC.X.production.o
+main@j_217 28 0 BANK0 1 cstackBANK0 dist/default/production\Multiplex_IC.X.production.o
+main@x_216 30 0 BANK0 1 cstackBANK0 dist/default/production\Multiplex_IC.X.production.o
 __Lspace_0 0 0 ABS 0 - -
 __Lspace_1 0 0 ABS 0 - -
 __Lspace_2 0 0 ABS 0 - -
@@ -560,9 +566,9 @@ __Hreset_vec 2 0 CODE 0 reset_vec -
 __HbssBANK0 0 0 ABS 0 bssBANK0 -
 SetLed@highPin 78 0 COMMON 1 cstackCOMMON dist/default/production\Multiplex_IC.X.production.o
 _SSPCON1bits 215 0 ABS 0 - dist/default/production\Multiplex_IC.X.production.o
-__ptext1 70A 0 CODE 0 text1 dist/default/production\Multiplex_IC.X.production.o
-__ptext2 5A2 0 CODE 0 text2 dist/default/production\Multiplex_IC.X.production.o
-__ptext3 660 0 CODE 0 text3 dist/default/production\Multiplex_IC.X.production.o
+__ptext1 734 0 CODE 0 text1 dist/default/production\Multiplex_IC.X.production.o
+__ptext2 5CC 0 CODE 0 text2 dist/default/production\Multiplex_IC.X.production.o
+__ptext3 68A 0 CODE 0 text3 dist/default/production\Multiplex_IC.X.production.o
 main@lowPin 36 0 BANK0 1 cstackBANK0 dist/default/production\Multiplex_IC.X.production.o
 __Lpowerup 0 0 CODE 0 powerup -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
@@ -577,10 +583,10 @@ _targetState 3F 0 BANK0 1 bssBANK0 dist/default/production\Multiplex_IC.X.produc
 __Lclrtext 0 0 ABS 0 clrtext -
 _SSP1CON1bits 215 0 ABS 0 - dist/default/production\Multiplex_IC.X.production.o
 __pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production\Multiplex_IC.X.production.o
-_initialize 70A 0 CODE 0 text1 dist/default/production\Multiplex_IC.X.production.o
+_initialize 734 0 CODE 0 text1 dist/default/production\Multiplex_IC.X.production.o
 _SSP1ADD 212 0 ABS 0 - dist/default/production\Multiplex_IC.X.production.o
 __Hend_init 5C 0 CODE 0 end_init -
-__end_of_main 5A2 0 CODE 0 maintext dist/default/production\Multiplex_IC.X.production.o
+__end_of_main 5CC 0 CODE 0 maintext dist/default/production\Multiplex_IC.X.production.o
 _PORTA C 0 ABS 0 - dist/default/production\Multiplex_IC.X.production.o
 _TRISA 8C 0 ABS 0 - dist/default/production\Multiplex_IC.X.production.o
 _TRISC 8E 0 ABS 0 - dist/default/production\Multiplex_IC.X.production.o
@@ -618,7 +624,7 @@ __CFG_WRT$OFF 0 0 ABS 0 - dist/default/production\Multiplex_IC.X.production.o
 %SEGMENTS
 cstackCOMMON 1 70 70 B 1
 cstackBANK0 1 20 20 20 1
-intentry 0 4 8 3A4 2
+intentry 0 4 8 3B9 2
 reset_vec 0 0 0 1 2
 config 0 8007 1000E 2 2
 # OTES Section
