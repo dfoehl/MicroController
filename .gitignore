@@ -9,3 +9,6 @@
 /Can2Rest/Can2Rest/obj
 /Can2Rest/CanClient/bin
 /Can2Rest/CanClient/obj
+*/build/default
+*/dist/default
+*.sch-bak
