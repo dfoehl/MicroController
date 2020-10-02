@@ -104,7 +104,7 @@ void initialize() {
     TRISx registers
     */
     TRISA = 0xFF;
-    TRISB = 0b11111011;
+    TRISB = 0b10111011;
     TRISC = 0xE7;
 
     /**
@@ -120,7 +120,7 @@ void initialize() {
     WPUE = 0x00;
     WPUB = 0x00;
     WPUA = 0b11111111;
-    WPUC = 0x00;
+    WPUC = 0b00011000;
 
     /**
     ODx registers
@@ -145,10 +145,10 @@ void initialize() {
     INLVLE = 0x08;
     
     // I2C INIT
-    I2C1SDAPPS = 0x14;   //RC4->I2C1:SDA1;    
-    RC3PPS = 0x21;   //RC3->I2C1:SCL1;    
-    RC4PPS = 0x22;   //RC4->I2C1:SDA1;      
-    I2C1SCLPPS = 0x13;   //RC3->I2C1:SCL1;       
+    I2C1SDAPPS = 0x13;   //RC3->I2C1:SDA1;    
+    RC3PPS = 0x22;   //RC3->I2C1:SDA1;       
+    RC4PPS = 0x21;   //RC4->I2C1:SCL1;      
+    I2C1SCLPPS = 0x14;   //RC4->I2C1:SCL1;         
     RC3I2C = 0x01;
     RC4I2C = 0x01;    
     I2C1CON1 = 0b01000000;
