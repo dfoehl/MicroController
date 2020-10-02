@@ -3,3 +3,9 @@
 ################################################################################
 
 /.vs
+/Can2Rest/.vs
+/Can2Rest/Can2Rest/.config
+/Can2Rest/Can2Rest/bin
+/Can2Rest/Can2Rest/obj
+/Can2Rest/CanClient/bin
+/Can2Rest/CanClient/obj

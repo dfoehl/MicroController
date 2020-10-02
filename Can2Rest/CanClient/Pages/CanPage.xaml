@@ -1,0 +1,39 @@
+﻿<Page
+    x:Class="CanClient.Pages.CanPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CanClient.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    xmlns:converters="using:Microsoft.Toolkit.Uwp.UI.Converters"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.Resources>
+        <converters:StringFormatConverter x:Key="sfc" />
+    </Page.Resources>
+
+    <StackPanel Orientation="Vertical">
+        <Button Content="Scan" Margin="20" Click="ScanClickedAsync" />
+        <controls:DataGrid Margin="20" ItemsSource="{Binding CanDevices}" AutoGenerateColumns="False" IsReadOnly="True">
+            <controls:DataGrid.Columns>
+                <controls:DataGridTextColumn Header="CanId" Binding="{Binding CanId, Converter={StaticResource sfc}, ConverterParameter='{}{0:X2}'}" />
+                <controls:DataGridTextColumn Header="Name" Binding="{Binding Name}" />
+                <controls:DataGridTextColumn Header="Slaves" Binding="{Binding I2cDevices.Count}" />
+            </controls:DataGrid.Columns>
+            <controls:DataGrid.RowStyle>
+                <Style TargetType="controls:DataGridRow">
+                    <Setter Property="controls:DataGridRow.ContextFlyout">
+                        <Setter.Value>
+                            <MenuFlyout>
+                                <MenuFlyoutItem
+                                    Click="ScanI2cClickedAsync"
+                                    Text="Scan I2C-Slaves" />
+                            </MenuFlyout>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </controls:DataGrid.RowStyle>
+        </controls:DataGrid>
+    </StackPanel>
+</Page>

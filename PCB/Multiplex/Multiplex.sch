@@ -59,7 +59,7 @@ F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/41607A.pdf" H 5650 3250 50 
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	5650 2650 1000 2650
+	5650 2650 4025 2650
 Wire Wire Line
 	1000 2650 1000 3325
 Wire Wire Line
@@ -157,7 +157,7 @@ U 1 1 5E9E3F70
 P 3650 3825
 F 0 "R5" H 3720 3871 50  0000 L CNN
 F 1 "150" H 3720 3780 50  0000 L CNN
-F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal" V 3580 3825 50  0001 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 3580 3825 50  0001 C CNN
 F 3 "~" H 3650 3825 50  0001 C CNN
 	1    3650 3825
 	1    0    0    -1  
@@ -170,7 +170,7 @@ Wire Wire Line
 	3650 4450 3650 4775
 Connection ~ 3650 4775
 Wire Wire Line
-	3650 4775 5675 4775
+	3650 4775 3925 4775
 Wire Wire Line
 	2825 4300 3050 4300
 Wire Wire Line
@@ -274,12 +274,40 @@ Connection ~ 6700 4700
 $Comp
 L Connector_Generic:Conn_01x02 J4
 U 1 1 5E9FA994
-P 2625 4400
-F 0 "J4" H 2713 4314 50  0000 L CNN
-F 1 "Track" H 2713 4223 50  0000 L CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x02_P2.54mm_Horizontal" H 2625 4400 50  0001 C CNN
-F 3 "~" H 2625 4400 50  0001 C CNN
-	1    2625 4400
-	-1   0    0    1   
+P 2625 4300
+F 0 "J4" H 2713 4214 50  0000 L CNN
+F 1 "Track" H 2713 4123 50  0000 L CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x02_P2.54mm_Horizontal" H 2625 4300 50  0001 C CNN
+F 3 "~" H 2625 4300 50  0001 C CNN
+	1    2625 4300
+	-1   0    0    -1  
 $EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5ED5824C
+P 3925 4775
+F 0 "#PWR?" H 3925 4525 50  0001 C CNN
+F 1 "GND" H 3930 4602 50  0000 C CNN
+F 2 "" H 3925 4775 50  0001 C CNN
+F 3 "" H 3925 4775 50  0001 C CNN
+	1    3925 4775
+	1    0    0    -1  
+$EndComp
+Connection ~ 3925 4775
+Wire Wire Line
+	3925 4775 5675 4775
+$Comp
+L power:+5V #PWR?
+U 1 1 5ED588EC
+P 4025 2650
+F 0 "#PWR?" H 4025 2500 50  0001 C CNN
+F 1 "+5V" H 4040 2823 50  0000 C CNN
+F 2 "" H 4025 2650 50  0001 C CNN
+F 3 "" H 4025 2650 50  0001 C CNN
+	1    4025 2650
+	1    0    0    -1  
+$EndComp
+Connection ~ 4025 2650
+Wire Wire Line
+	4025 2650 1000 2650
 $EndSCHEMATC

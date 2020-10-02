@@ -1,0 +1,45 @@
+﻿<Page
+    x:Class="CanClient.Pages.MessagePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CanClient.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    xmlns:converters="using:Microsoft.Toolkit.Uwp.UI.Converters"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.Resources>
+        <converters:StringFormatConverter x:Key="sfc" />
+    </Page.Resources>
+
+    <SplitView IsPaneOpen="{Binding IsOn, ElementName=showPane, Mode=TwoWay}">
+        <SplitView.Pane>
+            <StackPanel Orientation="Vertical">
+                <ComboBox Header="CAN-ID" SelectedItem="{Binding SelectedCanDevice}" ItemsSource="{Binding CanDevices}" Margin="20" />
+                <ToggleSwitch Header="RTR-Frame" Margin="20" IsOn="{Binding IsRtr}"/>
+                <ComboBox Header="Message-Type"  SelectedItem="{Binding MessageType}" Margin="20">
+                    <ComboBox.Items>
+                        <ComboBoxItem Content="Request I2C Slaves"/>
+                        <ComboBoxItem Content="Set I2C Slave" />
+                    </ComboBox.Items>
+                </ComboBox>
+                <ComboBox Header="I2C-ID" SelectedItem="SelectedI2cDevice" ItemsSource="SelectedCanDevice.Slaves" Visibility="Visible" Margin="20" />
+                <ComboBox Header="I2C Data" SelectedItem="" ItemsSource="" Visibility="Visible" Margin="20" />
+                <Button Content="Send" Margin="20" Click="SendClicked"/>
+            </StackPanel>
+        </SplitView.Pane>
+        <SplitView.Content>
+            <StackPanel Orientation="Vertical">
+                <ToggleSwitch x:Name="showPane" />
+                <controls:DataGrid Margin="20" ItemsSource="{Binding Messages}" AutoGenerateColumns="False" IsReadOnly="True">
+                    <controls:DataGrid.Columns>
+                        <controls:DataGridTextColumn Header="CanId" Binding="{Binding Sender.CanId, Converter={StaticResource sfc}, ConverterParameter='{}{0:X2}'}" />
+                        <controls:DataGridTextColumn Header="I2C" Binding="{Binding SenderSlave.Id, Converter={StaticResource sfc}, ConverterParameter='{}{0:X2}'}" />
+                        <controls:DataGridTextColumn Header="Data" Binding="{Binding Data, Converter={StaticResource sfc}, ConverterParameter='{}{0:X2}'}" />
+                    </controls:DataGrid.Columns>
+                </controls:DataGrid>
+            </StackPanel>
+        </SplitView.Content>
+    </SplitView>
+</Page>
