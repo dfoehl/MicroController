@@ -53,6 +53,8 @@
 
 enum {
     HP0    = 0x00,
+    HP00   = 0x01,
+    HP00X  = 0x0E,
     HP0X   = 0x0F,
     HP1    = 0x11,
     HP1Vr0 = 0x33,
@@ -120,7 +122,13 @@ void main(void) {
         switch(targetState) {
             default:
             case HP0 :
-            case HP0X:
+            case HP0X:                
+                highPin[0] = 0;
+                lowPin[0] = 3;
+                pinActive[0] = 1;
+                break;
+            case HP00 :
+            case HP00X:
                 highPin[0] = 0;
                 lowPin[0] = 1;
                 pinActive[0] = 1; 
@@ -257,7 +265,8 @@ void main(void) {
         GIE = 1;
         
         switch(targetState) {
-            case HP0 :
+            case HP0  :
+            case HP00 :
                 LATAbits.LATA5 = 0;
                 break;
             default:
