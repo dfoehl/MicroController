@@ -12,15 +12,15 @@
  * RA1 = I2C Adress Bit 2
  * RA2 = I2C Adress Bit 3
  * RA3 = MCLR
- * RA4 = 
- * RA5 = Track power pin
+ * RA4 = Output 0
+ * RA5 = Output 1
  * 
  * RC0 = I2C Clock / SCL
  * RC1 = I2C Data / SDA
- * RC2 = Signal Pin 1
- * RC3 = Signal Pin 2
- * RC4 = Signal Pin 3
- * RC5 = Signal Pin 4
+ * RC2 = Output 2
+ * RC3 = Output 3
+ * RC4 = Output 4
+ * RC5 = Output 5
  * 
  */
 
@@ -67,6 +67,9 @@ void initialize() {
     TRISA = 0b00000111;
     TRISC = 0b00000011;
     
+    PORTA = 0;
+    PORTC = 0;
+    
     ANSELC = 0x00;
     ANSELA = 0x00;
     
@@ -89,9 +92,9 @@ void initialize() {
 void setOutput(unsigned char state, unsigned char pinMove) {
     if(pinMove < 2) {
         if(state == 1)
-            PORTA = PORTA | (1 << (pinMove+3));
+            PORTA = PORTA | (1 << (pinMove+4));
         else
-            PORTA = PORTA & ~(1 << (pinMove+3));            
+            PORTA = PORTA & ~(1 << (pinMove+4));            
     }
     else {
         if(state == 1)
