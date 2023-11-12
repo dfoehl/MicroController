@@ -12,3 +12,6 @@
 */build/default
 */dist/default
 *.sch-bak
+
+PCB/**/*.zip
+PCB/*/gerber
