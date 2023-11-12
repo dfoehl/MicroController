@@ -1,0 +1,32 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>KiCad BOM Example 5</title>
+    </head>
+    <body>
+    <h1>M:\Programmierung\Multiplex IC\PCB\Multiplex\Multiplex.sch</h1>
+    <p>21.04.2020 19:11:25</p>
+    <p>Eeschema (5.1.5)-3</p>
+    <p><b>Component Count:</b>16</p>
+    <table>
+    <tr><th style='width:640px'>Ref</th><th>Qnty</th><th>Value</th><th>Part</th><th>Footprint</th><th>Description</th><th>Vendor</th></tr>
+    <tr><td>J1+1</td><td>1</td><td>Power</td><td>Connector_Generic:Conn_01x02</td><td>Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical</td><td>Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)</td><td></td></tr>
+    <tr><td>J1-1</td><td>1</td><td>Power</td><td>Connector_Generic:Conn_01x02</td><td>Connector_PinSocket_2.54mm:PinSocket_1x02_P2.54mm_Vertical</td><td>Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)</td><td></td></tr>
+    <tr><td>J2+1</td><td>1</td><td>I2C</td><td>Connector_Generic:Conn_01x02</td><td>Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical</td><td>Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)</td><td></td></tr>
+    <tr><td>J2-1</td><td>1</td><td>I2C</td><td>Connector_Generic:Conn_01x02</td><td>Connector_PinSocket_2.54mm:PinSocket_1x02_P2.54mm_Vertical</td><td>Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)</td><td></td></tr>
+    <tr><td>J3</td><td>1</td><td>Signal</td><td>Connector_Generic:Conn_02x02_Odd_Even</td><td>Connector_PinHeader_2.00mm:PinHeader_2x02_P2.00mm_Horizontal</td><td>Generic connector, double row, 02x02, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)</td><td></td></tr>
+    <tr><td>J4</td><td>1</td><td>Track</td><td>Connector_Generic:Conn_01x02</td><td>Connector_PinSocket_2.54mm:PinSocket_1x02_P2.54mm_Horizontal</td><td>Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)</td><td></td></tr>
+    <tr><td>JP1</td><td>1</td><td>I2C Bit 1</td><td>Jumper:SolderJumper_2_Open</td><td>Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm</td><td>Solder Jumper, 2-pole, open</td><td></td></tr>
+    <tr><td>JP2</td><td>1</td><td>I2C Bit 2</td><td>Jumper:SolderJumper_2_Open</td><td>Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm</td><td>Solder Jumper, 2-pole, open</td><td></td></tr>
+    <tr><td>JP3</td><td>1</td><td>I2C Bit 3</td><td>Jumper:SolderJumper_2_Open</td><td>Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm</td><td>Solder Jumper, 2-pole, open</td><td></td></tr>
+    <tr><td>R1, R2, R3, R4</td><td>4</td><td>330</td><td>Device:R</td><td>Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal</td><td>Resistor</td><td></td></tr>
+    <tr><td>R5</td><td>1</td><td>150</td><td>Device:R</td><td>Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal</td><td>Resistor</td><td></td></tr>
+    <tr><td>U1</td><td>1</td><td>PIC16F1503-IP</td><td>MCU_Microchip_PIC16:PIC16F1503-IP</td><td>Package_DIP:DIP-14_W7.62mm</td><td>2048W FLASH, 128B SRAM, PDIP-14</td><td></td></tr>
+    <tr><td>U2</td><td>1</td><td>MOC3041M</td><td>Relay_SolidState:MOC3041M</td><td>Package_DIP:DIP-6_W7.62mm</td><td>Zero Cross Opto-Triac, Vdrm 400V, Ift 15mA, DIP6</td><td></td></tr><!--TABLEROW-->
+    </table>
+    </body>
+</html>
+    
