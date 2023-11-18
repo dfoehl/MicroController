@@ -1,18 +1,24 @@
 /* 
  * File:   CanModule.h
- * Author: dfoeh
+ * Author: dfoehl
  *
  * Created on 12. Juni 2020, 00:37
  */
 
 #include <pic18f26k83.h>
 
+#include "CanCommands.h"
+#include "version.h"
+
 #include "CanModule.h"
+
+#define CAN_REQUEST_MASK (0x80u)
+#define CAN_GET_CMD(value_) (value_ & ~CAN_REQUEST_MASK)
 
 char CANADRH = 0x00;
 char CANADRL = 0x00;
 
-void I2CScan() {
+void I2CScan(void) {
     for(char i = 1; i <= 127; i++) {
         I2C1CNT = 0;
         I2C1ADB1 = i<<1;
@@ -21,46 +27,60 @@ void I2CScan() {
         while (500 > j++ );
         if (!I2C1CON1bits.ACKSTAT) {
             char data[2];
-            data[0] = 0xFF;
+            data[0] = CANCMD_SLAVE;
             data[1] = i;
             SendCanFrame(data, 2);
         }
     }
     char data[2];
-    data[0] = 0xFF;
+    data[0] = CANCMD_SLAVE;
     data[1] = 0xFF;
     SendCanFrame(data, 2);
 }
 
-void HandleRequest() {
-    switch(RXB1DLCbits.DLC) {
-        case 1:
-            I2CScan();
-            break;
+void RequestSlaveData(void) {
+    I2C1CNT = RXB1D2;
+    I2C1ADB1 = RXB1D1;
+    I2C1CON0bits.S = 1;
+    char data[6];
+    data[0] = CANCMD_SLAVE_DATA;
+    data[1] = RXB1D1;
+    char i = 0;
+    while(i <= RXB1D2) {
+        while(!I2C1STAT1bits.RXBF);
+        I2C1CON1bits.ACKDT = 0;
+        data[i+2] = I2C1RXB;
+        i++;
+    }
+    I2C1CON1bits.ACKCNT = 0;
+    SendCanFrame(data,RXB1DLCbits.DLC);
+}
+
+void HandleRequest(void) {
+    if(RXB1DLCbits.DLC > 0) {
+        switch (CAN_GET_CMD(RXB1D0)) {
+            case CANCMD_SLAVE:
+                if(RXB1DLCbits.DLC == 2) I2CScan();
+                break;
+            case CANCMD_VERSION:
+                if(RXB1DLCbits.DLC == 1) {
+                    char data[] = { 00, VERSION };
+                    SendCanFrame(data, 2);
+                }
+                break;
+            case CANCMD_SLAVE_DATA:
+                RequestSlaveData();
+                break;
+        }
     }
 }
 
-void HandleCommand() {
-    if(RXB1DLCbits.DLC == 3 && RXB1D0 == 0xEE) {                    
+void HandleCommand(void) {
+    if(RXB1DLCbits.DLC == 3 && RXB1D0 == CANCMD_SLAVE_SET) {                    
         I2C1CNT = 1;
         I2C1ADB1 = RXB1D1;
         I2C1TXB = RXB1D2;
         I2C1CON0bits.S = 1;
-    }
-    else if (RXB1DLCbits.DLC == 3 && RXB1D0 == 0xDD) {
-        I2C1CNT = RXB1D2;
-        I2C1ADB1 = RXB1D1;
-        I2C1CON0bits.S = 1;
-        char data[6];
-        char i = 0;
-        while(i <= RXB1D2) {
-            while(!I2C1STAT1bits.RXBF);
-            I2C1CON1bits.ACKDT = 0;
-            data[i] = I2C1RXB;
-            i++;
-        }
-        I2C1CON1bits.ACKCNT = 0;
-        SendCanFrame(data,RXB1D2);
     }
 }
 
@@ -109,11 +129,11 @@ void InitializeCan(char CanAddrHigh, char CanAddrLow) {
     PIE5bits.RXB1IE = 1;
 }
 
-void ProcessCanMessage() {
+void ProcessCanMessage(void) {
     // Broadcast Buffer
     if(RXB0IF) {
-        if(RXB0CONbits.RXFUL && RXB0DLCbits.DLC == 1 && RXB0D0 == 0xFF) {
-            SendCanFrameS(0xFF);
+        if(RXB0CONbits.RXFUL && RXB0DLCbits.DLC == 1 && RXB0D0 == (CAN_REQUEST_MASK | CANCMD_DISCOVER)) {
+            SendCanFrameS(CANCMD_DISCOVER);
             RXB0CONbits.RXFUL = 0;
         }
         RXB0IF = 0;
@@ -121,7 +141,7 @@ void ProcessCanMessage() {
     // Targeted Buffer
     else if(RXB1IF) {
         if(RXB1CONbits.RXFUL) {
-            if(RXB1CONbits.RXRTRRO) {
+            if((RXB1D0 & CAN_REQUEST_MASK) != 0) {
                 HandleRequest();
             }
             else {

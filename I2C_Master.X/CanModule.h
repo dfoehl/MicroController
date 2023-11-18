@@ -12,10 +12,10 @@
 extern "C" {
 #endif
 
-    void ProcessCanMessage();
-    void SendCanFrame(char data[], char length);
-    void SendCanFrameS(char data);
-    void InitializeCan(char CanAddrHigh, char CanAddrLow);
+void ProcessCanMessage(void);
+void SendCanFrame(char data[], char length);
+void SendCanFrameS(char data);
+void InitializeCan(char CanAddrHigh, char CanAddrLow);
 
 #ifdef	__cplusplus
 }
