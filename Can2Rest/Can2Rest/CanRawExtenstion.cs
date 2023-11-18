@@ -42,7 +42,7 @@ namespace Can2Rest
                 canId.Standard = frame.Address;
             }
             byte[] data = new byte[frame.DLC];
-            Array.Copy(frame.Data, data, frame.DLC);
+            Array.Copy(frame.Data, data, frame.DLC > frame.Data.Length ? frame.Data.Length : frame.DLC);
 
             can.WriteFrame(data, canId);
         }
