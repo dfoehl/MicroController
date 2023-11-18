@@ -14,7 +14,7 @@ namespace Can2Rest.Controllers
     public class CanController : ControllerBase
     {
         private static ConcurrentQueue<CanFrame> receivedFrames = new ConcurrentQueue<CanFrame>();
-        private static Task canRecvTask;
+        private static readonly Task canRecvTask;
 
         static CanController()
         {

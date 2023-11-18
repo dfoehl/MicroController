@@ -25,10 +25,13 @@ namespace Can2Rest
 
         public static void WriteFrame(this CanRaw can, CanFrame frame)
         {
-            var canId = new CanId();
-            canId.RemoteTransmissionRequest = frame.RemoteRequest;
+            var canId = new CanId
+            {
+                RemoteTransmissionRequest = frame.RemoteRequest
+                
+            };
 
-            if(frame.FrameFormat == FrameFormat.Extended)
+            if (frame.FrameFormat == FrameFormat.Extended)
             {
                 canId.ExtendedFrameFormat = true;
                 canId.Extended = frame.Address;
