@@ -8,7 +8,13 @@
 #include <pic18f26k83.h>
 #include <stdint.h>
 
+#include "CanCommands.h"
+#include "version.h"
+
 #include "CanModule.h"
+
+#define CAN_REQUEST_MASK (0x80u)
+#define CAN_GET_CMD(value_) (value_ & ~CAN_REQUEST_MASK)
 
 char CANADRH = 0x00;
 char CANADRL = 0x00;
@@ -17,20 +23,28 @@ void I2CScan() {
 
     char data[2];
     
-    data[0] = 0xFF;
+    data[0] = CANCMD_DISCOVER;
     data[1] = 0x01;
     SendCanFrame(data, 2);
             
-    data[0] = 0xFF;
+    data[0] = CANCMD_DISCOVER;
     data[1] = 0xFF;
     SendCanFrame(data, 2);
 }
 
 void HandleRequest() {
-    switch(RXB1DLCbits.DLC) {
-        case 1:
-            I2CScan();
-            break;
+    if(RXB1DLCbits.DLC > 0) {
+        switch (CAN_GET_CMD(RXB1D0)) {
+            case CANCMD_SLAVE:
+                if(RXB1DLCbits.DLC == 2) I2CScan();
+                break;
+            case CANCMD_VERSION:
+                if(RXB1DLCbits.DLC == 1) {
+                    char data[] = { CANCMD_VERSION, VERSION };
+                    SendCanFrame(data, 2);
+                }
+                break;
+        }
     }
 }
 
@@ -39,7 +53,7 @@ void HandleCommand() {
 
 void CanSendKeys(uint32_t keyMask) {
     char data[5];
-    data[0] = 0xCC;
+    data[0] = CANCMD_KEYBOARD_INPUT;
     data[1] = keyMask >> 24;
     data[2] = (keyMask >> 16) & 0xFF;
     data[3] = (keyMask >> 8) & 0xFF;
@@ -95,8 +109,8 @@ void InitializeCan(char CanAddrHigh, char CanAddrLow) {
 void ProcessCanMessage(void) {
     // Broadcast Buffer
     if(RXB0IF) {
-        if(RXB0CONbits.RXFUL && RXB0DLCbits.DLC == 1 && RXB0D0 == 0xFF) {
-            SendCanFrameS(0xFF);
+        if(RXB0CONbits.RXFUL && RXB0DLCbits.DLC == 1 && RXB0D0 == (CAN_REQUEST_MASK | CANCMD_DISCOVER)) {
+            SendCanFrameS(CANCMD_DISCOVER);
             RXB0CONbits.RXFUL = 0;
         }
         RXB0IF = 0;
@@ -104,7 +118,7 @@ void ProcessCanMessage(void) {
     // Targeted Buffer
     else if(RXB1IF) {
         if(RXB1CONbits.RXFUL) {
-            if(RXB1CONbits.RXRTRRO) {
+            if((RXB1D0 & CAN_REQUEST_MASK) != 0) {
                 HandleRequest();
             }
             else {

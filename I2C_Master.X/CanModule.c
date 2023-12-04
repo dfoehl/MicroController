@@ -42,11 +42,11 @@ void RequestSlaveData(void) {
     I2C1CNT = RXB1D2;
     I2C1ADB1 = RXB1D1;
     I2C1CON0bits.S = 1;
-    char data[6];
+    char data[8];
     data[0] = CANCMD_SLAVE_DATA;
     data[1] = RXB1D1;
     char i = 0;
-    while(i <= RXB1D2) {
+    while(i < RXB1D2) {
         while(!I2C1STAT1bits.RXBF);
         I2C1CON1bits.ACKDT = 0;
         data[i+2] = I2C1RXB;
@@ -64,7 +64,7 @@ void HandleRequest(void) {
                 break;
             case CANCMD_VERSION:
                 if(RXB1DLCbits.DLC == 1) {
-                    char data[] = { 00, VERSION };
+                    char data[] = { CANCMD_VERSION, VERSION };
                     SendCanFrame(data, 2);
                 }
                 break;

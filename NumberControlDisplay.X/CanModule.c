@@ -6,11 +6,17 @@
  */
 
 #include <pic18f26k83.h>
-
 #include <stdbool.h>
 #include <stdint.h>
-#include "CanModule.h"
+
+#include "CanCommands.h"
+#include "version.h"
 #include "KeyDefinition.h"
+
+#include "CanModule.h"
+
+#define CAN_REQUEST_MASK (0x80u)
+#define CAN_GET_CMD(value_) (value_ & ~CAN_REQUEST_MASK)
 
 char CANADRH = 0x00;
 char CANADRL = 0x00;
@@ -26,25 +32,33 @@ void I2CScan() {
     
     char data[2];
 
-    data[0] = 0xFF;
+    data[0] = CANCMD_DISCOVER;
     data[1] = 0x01;
     SendCanFrame(data, 2);
     
-    data[0] = 0xFF;
+    data[0] = CANCMD_DISCOVER;
     data[1] = 0xFF;
     SendCanFrame(data, 2);
 }
 
 void HandleRequest() {
-    switch(RXB1DLCbits.DLC) {
-        case 1:
-            I2CScan();
-            break;
+    if(RXB1DLCbits.DLC > 0) {
+        switch (CAN_GET_CMD(RXB1D0)) {
+            case CANCMD_SLAVE:
+                if(RXB1DLCbits.DLC == 2) I2CScan();
+                break;
+            case CANCMD_VERSION:
+                if(RXB1DLCbits.DLC == 1) {
+                    char data[] = { CANCMD_VERSION, VERSION };
+                    SendCanFrame(data, 2);
+                }
+                break;
+        }
     }
 }
 
 void HandleCommand() {
-    if(RXB1DLCbits.DLC == 8 && RXB1D0 == 0xEE && RXB1D1 == 0x01) { 
+    if(RXB1DLCbits.DLC == 8 && RXB1D0 == CANCMD_SLAVE_SET && RXB1D1 == 0x01) { 
         value[0] = RXB1D2;
         value[1] = RXB1D3;
         value[2] = RXB1D4;
@@ -102,8 +116,8 @@ void InitializeCan(char CanAddrHigh, char CanAddrLow) {
 void ProcessCanMessage(void) {
     // Broadcast Buffer
     if(RXB0IF) {
-        if(RXB0CONbits.RXFUL && RXB0DLCbits.DLC == 1 && RXB0D0 == 0xFF) {
-            SendCanFrameS(0xFF);
+        if(RXB0CONbits.RXFUL && RXB0DLCbits.DLC == 1 && RXB0D0 == (CAN_REQUEST_MASK | CANCMD_DISCOVER)) {
+            SendCanFrameS(CANCMD_DISCOVER);
             RXB0CONbits.RXFUL = 0;
         }
         RXB0IF = 0;
@@ -111,7 +125,7 @@ void ProcessCanMessage(void) {
     // Targeted Buffer
     else if(RXB1IF) {
         if(RXB1CONbits.RXFUL) {
-            if(RXB1CONbits.RXRTRRO) {
+            if((RXB1D0 & CAN_REQUEST_MASK) != 0) {
                 HandleRequest();
             }
             else {

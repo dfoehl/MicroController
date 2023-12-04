@@ -26,7 +26,7 @@
 
 // CONFIG1
 #pragma config FOSC = INTOSC    // Oscillator Selection Bits (INTOSC oscillator: I/O function on CLKIN pin)
-#pragma config WDTE = OFF       // Watchdog Timer Enable (WDT disabled)
+#pragma config WDTE = ON        // Watchdog Timer Enable (WDT disabled)
 #pragma config PWRTE = OFF      // Power-up Timer Enable (PWRT disabled)
 #pragma config MCLRE = ON       // MCLR Pin Function Select (MCLR/VPP pin function is MCLR)
 #pragma config CP = OFF         // Flash Program Memory Code Protection (Program memory code protection is disabled)
@@ -57,7 +57,8 @@
 unsigned char latchedValue = 0;
 
 
-void initialize() {
+void initialize(void) {
+    
     OSCCON = 0b01110000;
     
     TRISA = 0b00110111;
@@ -92,31 +93,36 @@ void main(void) {
     while(1) {
         // No PORT is completely usable, so pin 0+1 are on PORTA4/5, while pins 2-5 are on PORTC2++
         latchedValue |= (~PORTA & PORTA_MASK) | ((~PORTC & PORTC_MASK) >> 2);
+        CLRWDT();
     }
 }
 
-void __interrupt() I2C_Slave() {
+void __interrupt() I2C_Slave(void) {
     unsigned char buf, pinMove, state, timeFactor;
     
     if(SSP1IF == 1) {
-        SSP1IF = 0;
         
         if(SSP1CON1bits.WCOL || SSP1CON1bits.SSPOV ) {
-            buf = SSPBUF;
+            buf = SSP1BUF;
             SSP1CON1bits.WCOL = 0;
             SSP1CON1bits.SSPOV = 0;       
-        }        
-        
-        if (SSP1STATbits.R_nW) {
-            SSPBUF = latchedValue;
+        }
+
+        if (ACKSTAT == 1) {
+            SSP1BUF = 0xC0;
+        }
+        if (SSP1STATbits.D_nA == 0) {
+            buf = SSP1BUF;
+        }
+        else if (SSP1STATbits.R_nW == 1) {
+            SSP1BUF = latchedValue;
             latchedValue = 0;
-        } else if (SSP1STATbits.D_nA) {
-            buf = SSPBUF;
         } else {
-            buf = SSPBUF;
+            buf = SSP1BUF;
         }
         
         SSPCON1bits.CKP = 1;
+        SSP1IF = 0;
     }
     
     return;
