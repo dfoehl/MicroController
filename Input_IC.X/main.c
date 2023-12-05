@@ -98,7 +98,7 @@ void main(void) {
 }
 
 void __interrupt() I2C_Slave(void) {
-    unsigned char buf, pinMove, state, timeFactor;
+    unsigned char buf;
     
     if(SSP1IF == 1) {
         
@@ -111,13 +111,16 @@ void __interrupt() I2C_Slave(void) {
         if (ACKSTAT == 1) {
             SSP1BUF = 0xC0;
         }
-        if (SSP1STATbits.D_nA == 0) {
+        
+        if (SSP1STATbits.R_nW == 1) {
             buf = SSP1BUF;
-        }
-        else if (SSP1STATbits.R_nW == 1) {
             SSP1BUF = latchedValue;
             latchedValue = 0;
-        } else {
+        }        
+        else if (SSP1STATbits.D_nA == 0) {
+            buf = SSP1BUF;
+        }
+        else {
             buf = SSP1BUF;
         }
         

@@ -151,10 +151,10 @@ void initialize() {
     I2C1SCLPPS = 0x14;   //RC4->I2C1:SCL1;         
     RC3I2C = 0x01;
     RC4I2C = 0x01;    
-    I2C1CON1 = 0b01000000;
+    I2C1CON1 = 0b00000000;
     I2C1CON2 = 0b00000001;
     I2C1CLK = 0x03;
-    I2C1CNT = 0xFF;
+    I2C1CNT = 0x00;
     //enable I2C
     I2C1CON0 = 0b10000100;
     

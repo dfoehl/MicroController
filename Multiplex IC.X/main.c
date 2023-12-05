@@ -310,18 +310,22 @@ void __interrupt() I2C_Slave() {
     if(SSP1IF == 1) {
         
         if(SSP1CON1bits.WCOL || SSP1CON1bits.SSPOV ) {
-            buf = SSPBUF;
+            buf = SSP1BUF;
             SSP1CON1bits.WCOL = 0;
             SSP1CON1bits.SSPOV = 0;       
         }        
         
-        if (SSP1STATbits.D_nA == 0) {
+        if (ACKSTAT == 1) {
+            SSP1BUF = 0xC0;
+        }
+        if (SSP1STATbits.R_nW == 1) {
+            buf = SSP1BUF;
+            SSP1BUF = 0x00;
+        }        
+        else if (SSP1STATbits.D_nA == 0) {
             buf = SSP1BUF;
         }
-        else if (SSP1STATbits.R_nW == 1) {
-            SSP1BUF = 0x00;
-            latchedValue = 0;
-        } else {
+        else {
             targetState = SSP1BUF;
         }
         
