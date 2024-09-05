@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "OptokopplerOutput-rescue")(type "KiCad")(uri "${KIPRJMOD}/OptokopplerOutput-rescue.kicad_sym")(options "")(descr ""))
+)
