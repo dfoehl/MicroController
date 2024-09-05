@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "NummernstellpultInput-rescue")(type "KiCad")(uri "${KIPRJMOD}/NummernstellpultInput-rescue.kicad_sym")(options "")(descr ""))
+)
