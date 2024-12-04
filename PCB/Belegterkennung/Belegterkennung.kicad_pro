@@ -59,17 +59,14 @@
         }
       ],
       "drc_exclusions": [
-        "courtyards_overlap|203900001|105110001|27fa2160-f318-47ba-8ec4-ba69fe3a6361|24bc6fb6-9404-4a6d-b5fa-f4d7ee2eea5e",
+        "courtyards_overlap|203900001|105110001|24bc6fb6-9404-4a6d-b5fa-f4d7ee2eea5e|27fa2160-f318-47ba-8ec4-ba69fe3a6361",
         "courtyards_overlap|203900001|107650001|27fa2160-f318-47ba-8ec4-ba69fe3a6361|6432a4d7-5d7f-43dc-a7bf-a3ddca7452ef",
         "courtyards_overlap|203900001|91125001|27fa2160-f318-47ba-8ec4-ba69fe3a6361|fef4f6f5-6a50-4456-8b56-a639bc3b4d0b",
         "courtyards_overlap|203900001|93030001|27fa2160-f318-47ba-8ec4-ba69fe3a6361|69449063-e488-4f8b-b182-93dccfdebb2a",
         "courtyards_overlap|203900001|94950001|27fa2160-f318-47ba-8ec4-ba69fe3a6361|57934802-10ec-4596-b8a3-d3162348144b",
-        "courtyards_overlap|204703598|97490001|27fa2160-f318-47ba-8ec4-ba69fe3a6361|0c387695-37d3-4209-bde5-58890ef0c710",
-        "courtyards_overlap|205897458|100030001|27fa2160-f318-47ba-8ec4-ba69fe3a6361|01345419-fe26-4be2-9853-f5a1385c66b8",
+        "courtyards_overlap|204703598|97490001|0c387695-37d3-4209-bde5-58890ef0c710|27fa2160-f318-47ba-8ec4-ba69fe3a6361",
+        "courtyards_overlap|205897458|100030001|01345419-fe26-4be2-9853-f5a1385c66b8|27fa2160-f318-47ba-8ec4-ba69fe3a6361",
         "courtyards_overlap|207091319|102570001|27fa2160-f318-47ba-8ec4-ba69fe3a6361|3f7d8147-0ce8-4081-bd8c-0d647f8d04dd",
-        "silk_overlap|179334342|75105713|06cb4cd1-d743-4f85-a81d-2ecc4331a23b|736d43df-e259-4b32-bd3d-18a6babebdb9",
-        "silk_overlap|188840000|80344285|c51df246-1d8f-467e-9063-133566af8267|64e6573d-ac65-4c34-9255-ed127af3c238",
-        "silk_overlap|201050000|83678094|e0521f55-2cbb-4c07-9f9c-86f13946806b|c42c5071-f438-4fc0-bfd4-315fa82f7c84",
         "starved_thermal|200919157|100980000|67ebd1f3-b5b1-41b4-8e5e-1bdf05dfe267|54b3ccbc-2909-40fb-bfaa-82af86c8590f|F.Cu",
         "starved_thermal|200919157|106060000|67ebd1f3-b5b1-41b4-8e5e-1bdf05dfe267|0b929145-7b0e-44e0-81b8-d41e4470d98b|B.Cu",
         "starved_thermal|200919157|106060000|67ebd1f3-b5b1-41b4-8e5e-1bdf05dfe267|0b929145-7b0e-44e0-81b8-d41e4470d98b|F.Cu",
@@ -198,7 +195,8 @@
         }
       ],
       "track_widths": [
-        0.0
+        0.0,
+        1.0
       ],
       "tuning_pattern_settings": {
         "diff_pair_defaults": {
@@ -449,7 +447,7 @@
       "no_connect_dangling": "warning",
       "pin_not_connected": "error",
       "pin_not_driven": "error",
-      "pin_to_pin": "warning",
+      "pin_to_pin": "error",
       "power_pin_not_driven": "error",
       "similar_labels": "warning",
       "simulation_model_issue": "ignore",
@@ -482,8 +480,8 @@
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.2,
-        "via_diameter": 0.6,
-        "via_drill": 0.3,
+        "via_diameter": 1.0,
+        "via_drill": 0.4,
         "wire_width": 6
       }
     ],

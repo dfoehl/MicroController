@@ -3,6 +3,7 @@
 ################################################################################
 
 /.vs
+/.vscode
 /Can2Rest/.vs
 /Can2Rest/Can2Rest/.config
 /Can2Rest/Can2Rest/bin
@@ -14,4 +15,4 @@
 *.sch-bak
 
 PCB/**/*.zip
-PCB/*/gerber
+PCB/**/gerber/*
